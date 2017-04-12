@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>全屏/整屏滚动组件fullPage演示-垂直滚动_dowebok</title>
+<style>
+	body,  div,  p { margin: 0; padding: 0;}
+	ul { list-style: none;}
+	html { overflow: hidden;}
+	body { width: 100%;  *cursor: default;overflow: hidden; font: 16px/1.5 "Microsoft YaHei", Helvetica, STHeiti STXihei, Microsoft JhengHei, Arial;}
+	#pageContain { overflow: hidden;}
+	.page { display: none; width: 100%; height: 100%; overflow: hidden; position: absolute; top: 0; left: 0;}
+	.contain { width: 100%; height: 100%; display: none; position: relative; z-index: 0;}
+	.current .contain, .slide .contain { display: block;}
+	.current { display: block; z-index: 1;}
+	.slide { display: block; z-index: 2;}
+	.swipe { display: block; z-index: 3; transition-duration: 0ms !important; -webkit-transition-duration: 0ms !important;}
+	#navBar { z-index: 3; position: absolute; top: 30%; right: 3%;}
+	#navBar .active { background: #ccc;}
+	#navBar li { cursor: pointer; margin-bottom: 10px; transition: all .7s ease; border-radius: 50%; line-height: 40px; text-align: center; width: 40px; height: 40px;}
+	.txt { margin-top: 20%; font-size: 50px; color: #fff; text-align: center;}
+	.btn2 {display:block; width:50px;height:50px;background: red;position:fixed;bottom:0;left:180px;z-index:1000}
+</style>
+<script type="text/javascript" src="fullpage.min.js"></script>
+</head>
+
+<body>
+	<!-- <p class="btn2" id="btn2">erwrwe</p> -->
+<div id="pageContain">
+	<div class="page page1 current">
+		<img src="one.png">
+	</div>
+
+	<div class="page page2">
+		<img src="two.png">
+	</div>
+
+	<div class="page page3">
+		<img src="three.png">
+	</div>
+
+	<div class="page page4">
+		<img src="four.png">
+	</div>
+
+	<div class="page page5">
+		<img src="five.png">
+	</div>
+	<div class="page page6">
+		<img src="six.png">
+	</div>
+	<div class="page page7">
+		<img src="seven.png">
+	</div>
+	<div class="page page8">
+		<img src="eight.png">
+	</div>
+</div>
+
+<ul id="navBar">
+	<li>1</li>
+	<li>2</li>
+	<li>3</li>
+	<li>4</li>
+	<li>5</li>
+	<li>6</li>
+	<li>7</li>
+	<li>8</li>
+</ul>
+
+<!-- <script src="js/fullPage.min.js"></script> -->
+<script>
+	var runPage;
+	runPage = new FullPage({
+		id: 'pageContain',
+		slideTime: 800,
+		effect: {
+			transform: {
+				translate: 'Y'
+			},
+			opacity: [0, 1]
+		},
+		mode: 'wheel, touch, nav:navBar',
+		easing: 'ease'
+	});
+
+	// var oBtn = document.getElementById('btn2');
+	// oBtn.onclick = function(){
+
+	// 	var runPage2;
+	// 	runPage2 = new FullPage({
+	// 		id: 'pageContain',
+	// 		slideTime: 800,
+	// 		effect: {
+	// 			transform: {
+	// 				translate: 'Y'
+	// 			},
+	// 			opacity: [0, 1]
+	// 		},
+	// 		mode: 'wheel, touch, nav:navBar',
+	// 		easing: 'ease'
+	// 	});
+	// 	// next();
+	// }
+
+	// oBtn.onclick = function(){
+ //        runPage.go(runPage.thisPage() + 1);
+	// }
+
+
+</script>
+
+</body>
+</html>
